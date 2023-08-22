@@ -1,0 +1,7 @@
+Cores:
+
+Preto		Azul Claro	Azul Escuro	Branco		Cinza
+0E1119		2186F4		1B70CB		FFFFFF		C9CED3
+								(Texto corrido)
+
+
