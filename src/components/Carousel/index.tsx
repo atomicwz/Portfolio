@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
       _hover={{
         bg: "transparent",
       }}
-      top="50%"
+      top="70%"
       right={{ base: "-20px", md: "20px" }}
       cursor="pointer"
       transform="translateY(-50%)"
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
       _hover={{
         bg: "transparent",
       }}
-      top="50%"
+      top="70%"
       left={{ base: "-20px", md: "20px" }}
       cursor="pointer"
       transform="translateY(-50%)"
@@ -94,7 +94,7 @@ const Projects: React.FC = () => {
   return (
     <Box mt={40} position="relative" w="90%" mx="auto" h={500}>
       <Box
-        w="25%"
+        w="20%"
         position="absolute"
         h="100%"
         right="0px"
@@ -102,7 +102,7 @@ const Projects: React.FC = () => {
         bg="linear-gradient(270deg, #0E1119 0%,  transparent 90%)"
       />
       <Box
-        w="25%"
+        w="20%"
         position="absolute"
         h="100%"
         left="0px"
@@ -133,6 +133,7 @@ const Projects: React.FC = () => {
                 top={0}
                 zIndex={30}
                 rounded="3xl"
+                bg="linear-gradient(0deg, rgba(14,17,25,.8) 0%, rgba(54,40,166,0) 80%)"
               />
             </Flex>
           );
