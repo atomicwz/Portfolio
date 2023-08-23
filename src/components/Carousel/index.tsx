@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
       _hover={{
         bg: "transparent",
       }}
-      top="50%"
+      top="70%"
       right={{ base: "-20px", md: "20px" }}
       cursor="pointer"
       transform="translateY(-50%)"
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
       _hover={{
         bg: "transparent",
       }}
-      top="50%"
+      top="70%"
       left={{ base: "-20px", md: "20px" }}
       cursor="pointer"
       transform="translateY(-50%)"
