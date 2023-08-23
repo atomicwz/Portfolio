@@ -2,6 +2,6 @@
   // "extends": "@rocketseat/eslint-config/node"
   "extends": "@rocketseat/eslint-config/react",
   "rules": {
-    "prettier/prettier": ["error", { "semi": true }]
+    "prettier/prettier": ["error", { "semi": true, "endOfLine": "auto" }]
   }
 }
