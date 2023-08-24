@@ -40,17 +40,33 @@ const Home: React.FC = () => {
         color="#FFFFFF"
         direction="column"
         py={10}
+        px={4}
       >
-        <Image src="/marca_portfolio.svg" alt="Logo" mx="auto" w={400} />
-        <Flex alignItems="center" justifyContent="center" mt={10} zIndex={1}>
+        <Image
+          src="/marca_portfolio.svg"
+          alt="Logo"
+          mx="auto"
+          w={{ base: 350, lg: 400 }}
+        />
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+          mt={10}
+          zIndex={1}
+          direction={{ base: "column-reverse", lg: "row" }}
+        >
           <Flex direction="column">
-            <Heading fontSize={{ base: 32, md: 60 }} fontWeight={300}>
+            <Heading
+              fontSize={{ base: 32, lg: 60 }}
+              fontWeight={300}
+              mt={{ base: 10, lg: 0 }}
+            >
               Olá, eu sou
             </Heading>
             <Heading
-              fontSize={{ base: 32, md: 60 }}
+              fontSize={{ base: 32, lg: 60 }}
               color="#1B70CB"
-              animation={`${colorChange} 5s infinite`}
+              animation={`${colorChange} 4s infinite`}
             >
               Denner Oliveira<chakra.span color="white">.</chakra.span>
             </Heading>
@@ -64,7 +80,7 @@ const Home: React.FC = () => {
             <Heading
               fontWeight={500}
               maxW={500}
-              fontSize={{ base: 25, md: 40 }}
+              fontSize={{ base: 25, lg: 40 }}
             >
               +1.5 anos trabalhando com React e Typescript.
             </Heading>
@@ -138,7 +154,16 @@ const Home: React.FC = () => {
               </Link>
             </Flex>
           </Flex>
-          <Image src="/foto_desktop.webp" alt="Dener" />
+          <Image
+            src="/foto_desktop.webp"
+            alt="Dener"
+            display={{ base: "none", lg: "block" }}
+          />
+          <Image
+            src="/foto_mobile.webp"
+            alt="Dener"
+            display={{ base: "block", lg: "none" }}
+          />
         </Flex>
         {/* SLIDE */}
         <Projects />
