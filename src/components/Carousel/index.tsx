@@ -54,8 +54,6 @@ const Projects: React.FC = () => {
     "/projetos/lumiar.png",
     "/projetos/meuloc.png",
     "/projetos/sisalgomes.png",
-    "https://images.unsplash.com/photo-1550223640-23097fc71cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550353175-a3611868086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   ];
 
   const renderItem = (item: ReactNode, { isSelected }: IOptions): ReactNode => {
@@ -133,6 +131,7 @@ const Projects: React.FC = () => {
               src={image}
               alt={image}
               objectFit="cover"
+              objectPosition="center"
             />
           );
         })}

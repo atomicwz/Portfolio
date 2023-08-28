@@ -36,7 +36,10 @@ const Home: React.FC = () => {
         />
       </Head>
       <Flex
-        background="url('/background.webp')"
+        background={{
+          md: "url('/background.webp')",
+          base: "url('/background_mobile.webp')",
+        }}
         backgroundSize="cover"
         color="#FFFFFF"
         direction="column"
@@ -72,11 +75,11 @@ const Home: React.FC = () => {
               Denner Oliveira<chakra.span color="white">.</chakra.span>
             </Heading>
             <Text maxW={500} fontSize={{ base: 16, md: 18 }} my={5}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
-              justo ex. Pellentesque laoreet eros non est gravida bibendum.
-              Morbi in interdum nisi. Maecenas mattis lacus non arcu convallis,
-              a efficitur risus eleifend. Etiam ullamcorper posuere lorem rutrum
-              molestie. Pellentesque vel imperdiet
+              Sou alguém dedicado e determinado a alcançar meus objetivos. Minha
+              trajetória é marcada pelo constante esforço em aprender e evoluir.
+              Além disso, sou sociável e gosto de colaborar com outros,
+              acreditando que juntos podemos conquistar muito mais. Estou sempre
+              decidido a enfrentar desafios com entusiasmo.
             </Text>
             <Heading
               fontWeight={500}
@@ -169,9 +172,9 @@ const Home: React.FC = () => {
         {/* SLIDE */}
         <Projects />
         <Heading
-          fontSize={{ base: 32, md: 60 }}
+          fontSize={{ base: 28, md: 60 }}
           textAlign="center"
-          mt={{ base: 5, md: 20 }}
+          mt={{ base: 0, md: 20 }}
         >
           Habilidades Técnicas<chakra.span color="#1B70CB">.</chakra.span>
         </Heading>
@@ -189,7 +192,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/html5.svg"
                 alt="html5"
               />
@@ -209,7 +212,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/css.svg"
                 alt="CSS"
               />
@@ -229,7 +232,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/javascript.svg"
                 alt="Javascript"
               />
@@ -249,7 +252,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/react.svg"
                 alt="React"
               />
@@ -269,7 +272,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/typescript.svg"
                 alt="Typescript"
               />
@@ -286,7 +289,7 @@ const Home: React.FC = () => {
             justifyContent="space-between"
             w={{ base: "100%", md: "80%", lg: "60%" }}
             mx="auto"
-            mt={24}
+            mt={{ base: 16, md: 24 }}
           >
             <Flex
               direction="column"
@@ -296,7 +299,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/react-native.svg"
                 alt="React Native"
               />
@@ -316,7 +319,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/chakra-ui.svg"
                 alt="Chakra UI"
               />
@@ -336,7 +339,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/mobx.svg"
                 alt="Mobx"
               />
@@ -356,7 +359,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/next.svg"
                 alt="Next"
               />
@@ -376,7 +379,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/node.svg"
                 alt="Node"
               />
@@ -396,7 +399,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/nest_js.svg"
                 alt="Nest"
               />
@@ -413,7 +416,7 @@ const Home: React.FC = () => {
             justifyContent="space-between"
             w={{ base: "90%", md: "80%", lg: "60%" }}
             mx="auto"
-            mt={24}
+            mt={{ base: 16, md: 24 }}
           >
             <Flex
               direction="column"
@@ -423,7 +426,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/postgres.svg"
                 alt="Postgres"
               />
@@ -443,7 +446,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/jest.svg"
                 alt="Jest"
               />
@@ -463,7 +466,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/typeorm.svg"
                 alt="Typeorm"
               />
@@ -484,7 +487,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/linux.svg"
                 alt="Linux"
               />
@@ -504,7 +507,7 @@ const Home: React.FC = () => {
               _hover={{ transform: "scale(1.2)" }}
             >
               <Image
-                w={{ base: 50, md: 100 }}
+                w={{ base: "30px", md: 100 }}
                 src="/tecnologias/github.svg"
                 alt="GitHub"
               />
@@ -518,6 +521,15 @@ const Home: React.FC = () => {
             </Flex>
           </Flex>
         </Flex>
+        <Text
+          mt={10}
+          color="white"
+          fontWeight={500}
+          textAlign="center"
+          fontSize={{ base: 14, md: 18 }}
+        >
+          Todos os direitos reservados. © 2023
+        </Text>
       </Flex>
     </>
   );
