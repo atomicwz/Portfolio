@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, useMediaQuery } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { ReactNode } from "react";
@@ -10,6 +10,7 @@ interface IOptions {
 }
 
 const Projects: React.FC = () => {
+  const [isLargerThan800] = useMediaQuery("(min-width: 1280px)");
   const buttonNext = (onClickHandler: () => void) => (
     <Button
       position="absolute"
@@ -17,21 +18,15 @@ const Projects: React.FC = () => {
       _hover={{
         bg: "transparent",
       }}
-      top="70%"
-      right={{ base: "-20px", md: "20px" }}
+      top={!isLargerThan800 ? "60%" : "70%"}
+      right={{ base: "-13px", md: "20px" }}
       cursor="pointer"
       transform="translateY(-50%)"
       zIndex={30}
       onClick={onClickHandler}
+      w={{ base: 12, md: 16 }}
     >
-      <Image
-        cursor="pointer"
-        style={{
-          width: "30px",
-        }}
-        alt="Seta"
-        src="/seta_direita.svg"
-      />
+      <Image cursor="pointer" w="100%" alt="Seta" src="/seta_direita.svg" />
     </Button>
   );
   const buttonPrev = (onClickHandler: () => void) => (
@@ -41,21 +36,16 @@ const Projects: React.FC = () => {
       _hover={{
         bg: "transparent",
       }}
-      top="70%"
-      left={{ base: "-20px", md: "20px" }}
+      mx="auto"
+      top={!isLargerThan800 ? "60%" : "70%"}
+      left={{ base: "-13px", md: "20px" }}
       cursor="pointer"
+      w={{ base: 12, md: 16 }}
       transform="translateY(-50%)"
       zIndex={30}
       onClick={onClickHandler}
     >
-      <Image
-        cursor="pointer"
-        style={{
-          width: "30px",
-        }}
-        alt="Seta"
-        src="/seta_esquerda.svg"
-      />
+      <Image cursor="pointer" w="100%" alt="Seta" src="/seta_esquerda.svg" />
     </Button>
   );
 
@@ -66,11 +56,6 @@ const Projects: React.FC = () => {
     "/projetos/sisalgomes.png",
     "https://images.unsplash.com/photo-1550223640-23097fc71cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "https://images.unsplash.com/photo-1550353175-a3611868086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550330039-a54e15ed9d33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1549737328-8b9f3252b927?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1549833284-6a7df91c1f65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   ];
 
   const renderItem = (item: ReactNode, { isSelected }: IOptions): ReactNode => {
@@ -78,9 +63,12 @@ const Projects: React.FC = () => {
       <Flex
         mt={24}
         h="300px"
-        w={isSelected ? "600px" : "500px"}
+        mx="auto"
+        w={isSelected && isLargerThan800 ? "90%" : "80%"}
         transform={
-          isSelected ? "translate(-50px, -75px)" : "translate(0px, 0px)"
+          isSelected && isLargerThan800
+            ? "translate(-30px, -75px)"
+            : "translate(0px, 0px)"
         }
         rounded="3xl"
         position="relative"
@@ -102,12 +90,18 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <Box mt={20} position="relative" w="90%" mx="auto" h={500}>
+    <Box
+      mt={{ base: 0, md: 20 }}
+      position="relative"
+      w={{ base: "100%", md: "90%" }}
+      mx="auto"
+      h={500}
+    >
       <Box
         w="20%"
         position="absolute"
         h="100%"
-        right="0px"
+        right="-2px"
         zIndex={30}
         bg="linear-gradient(270deg, #0E1119 0%,  transparent 90%)"
       />
@@ -115,7 +109,7 @@ const Projects: React.FC = () => {
         w="20%"
         position="absolute"
         h="100%"
-        left="0px"
+        left="-2px"
         zIndex={30}
         bg="linear-gradient(270deg, transparent  0%,  #0E1119 90%)"
       />
@@ -125,7 +119,7 @@ const Projects: React.FC = () => {
         infiniteLoop
         autoPlay
         autoFocus
-        centerMode
+        centerMode={isLargerThan800}
         renderItem={renderItem as any}
         centerSlidePercentage={35}
         showIndicators={false}
