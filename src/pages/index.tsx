@@ -67,7 +67,7 @@ const Home: React.FC = () => {
         <Grid
           w="70%"
           mx="auto"
-          mt={10}
+          mt={20}
           gridTemplateColumns="repeat(3, 1fr)"
           gap={30}
           justifyContent="center"
