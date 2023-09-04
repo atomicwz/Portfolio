@@ -1,37 +1,46 @@
 import React from "react";
-import { Flex, Image, Text, Button } from "@chakra-ui/react";
+import { Flex, Image, Text, Button, Box } from "@chakra-ui/react";
+import { IProject } from "@/resources/projects";
 
-const CardProject: React.FC = () => {
+interface IProps {
+  project: IProject;
+}
+const CardProject: React.FC<IProps> = ({ project }) => {
   return (
     <Flex
       flexDirection="column"
-      bg="black"
+      bg="linear-gradient(135deg, rgba(27,112,203,0.3) 0%, rgba(0,0,0,1) 67%)"
       mx="auto"
       borderTop="10px solid"
       borderBottom="10px solid"
       borderColor="#1B70CB"
       rounded="xl"
+      h={470}
       transition=".4s"
       _hover={{
         transform: "scale(1.03)",
       }}
     >
       <Image
-        src="/projetos/lumiar.png"
-        alt="Lumiar"
+        src={project.imageUrl}
+        alt={project.title}
         w="100%"
         objectFit="cover"
       />
-      <Flex flexDirection="column" p={5}>
-        <Text color="#1B70CB" fontWeight={700} fontSize={24}>
-          Lumiar Internet
-        </Text>
-        <Text fontSize={14} color="white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-          voluptas assumenda reprehenderit soluta a alias, libero repellendus
-          pariatur ducimus veniam tempora voluptatum expedita repellat
-          distinctio provident? Vitae eius dolore hic?
-        </Text>
+      <Flex
+        flexDirection="column"
+        p={5}
+        justifyContent="space-between"
+        h="100%"
+      >
+        <Box>
+          <Text color="#1B70CB" fontWeight={700} fontSize={24}>
+            {project.title}
+          </Text>
+          <Text fontSize={12} color="white">
+            {project.description}
+          </Text>
+        </Box>
         <Flex gap={4} mt={5}>
           <Button
             borderColor="#1B70CB"

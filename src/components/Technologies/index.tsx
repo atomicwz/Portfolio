@@ -7,7 +7,7 @@ const Technologies: React.FC = () => {
       <Heading
         fontSize={{ base: 28, md: 60 }}
         textAlign="center"
-        mb={{ base: 0, md: 20 }}
+        mb={{ base: 10, md: 20 }}
       >
         Habilidades Técnicas<chakra.span color="#1B70CB">.</chakra.span>
       </Heading>
