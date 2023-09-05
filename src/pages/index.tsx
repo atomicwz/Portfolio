@@ -26,15 +26,10 @@ const Home: React.FC = () => {
           md: "url('/background.webp')",
           base: "url('/background_mobile.webp')",
         }}
-        backgroundSize={{
-          md: "cover",
-          base: "cover",
-        }}
         backgroundAttachment={{
           md: "fixed",
           base: "fixed",
         }}
-        backgroundPosition="center"
         color="#FFFFFF"
         direction="column"
         py={10}
@@ -47,7 +42,6 @@ const Home: React.FC = () => {
           w={{ base: 350, lg: 400 }}
         />
         <Apresentation />
-        {/* SLIDE */}
         <Heading
           fontSize={{ base: 28, md: 60 }}
           textAlign="center"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Image, Text, Button, Box } from "@chakra-ui/react";
 import { IProject } from "@/resources/projects";
+import Link from "next/link";
 
 interface IProps {
   project: IProject;
@@ -42,24 +43,29 @@ const CardProject: React.FC<IProps> = ({ project }) => {
           </Text>
         </Box>
         <Flex gap={4} mt={5}>
-          <Button
-            borderColor="#1B70CB"
-            color="white"
-            variant="outline"
-            _hover={{ color: "black", bg: "#fff" }}
-          >
-            Ver Repositório
-          </Button>
-          <Button
-            bg="#1B70CB"
-            _hover={{
-              bg: "white",
-              color: "black",
-            }}
-            color="black"
-          >
-            Visitar Site
-          </Button>
+          <Link href={project.repositoryUrl || ""} target="_blank">
+            <Button
+              borderColor="#1B70CB"
+              color="white"
+              variant="outline"
+              _hover={{ color: "black", bg: "#fff" }}
+              isDisabled={!project.repositoryUrl}
+            >
+              Ver Repositório
+            </Button>
+          </Link>
+          <Link href={project.url} target="_blank">
+            <Button
+              bg="#1B70CB"
+              _hover={{
+                bg: "white",
+                color: "black",
+              }}
+              color="black"
+            >
+              Visitar Site
+            </Button>
+          </Link>
         </Flex>
       </Flex>
     </Flex>

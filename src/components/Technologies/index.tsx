@@ -140,7 +140,7 @@ const Technologies: React.FC = () => {
             fontWeight={500}
             fontSize={{ base: 12, md: 18 }}
           >
-            React Native
+            RN
           </Text>
         </Flex>
         <Flex
