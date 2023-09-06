@@ -1,34 +1,32 @@
 import React from "react";
 import { Flex, Heading, Image, chakra, Text, Grid } from "@chakra-ui/react";
-import Head from "next/head";
+import { projects } from "@/resources/projects";
 import Apresentation from "@/components/Apresentation";
 import Technologies from "@/components/Technologies";
 import CardProject from "@/components/CardProject";
-import { projects } from "@/resources/projects";
+import SiteHead from "@/components/SiteHead";
 
 const Home: React.FC = () => {
+  const [maxVisible, setMaxVisible] = React.useState(3);
   return (
     <>
-      <Head>
-        <title>Dener Oliveira - Portfólio</title>
-        <meta name="description" content="Portfólio" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <SiteHead />
       <Flex
         background={{
           md: "url('/background.webp')",
           base: "url('/background_mobile.webp')",
         }}
-        backgroundAttachment={{
-          md: "fixed",
-          base: "fixed",
+        backgroundRepeat={{
+          md: "no-repeat",
+          base: "no-repeat",
+        }}
+        backgroundSize={{
+          md: "cover",
+          base: "cover",
+        }}
+        backgroundPosition={{
+          base: "center",
+          md: "center",
         }}
         color="#FFFFFF"
         direction="column"
@@ -63,10 +61,42 @@ const Home: React.FC = () => {
           justifyContent="center"
           alignItems="center"
         >
-          {projects.map((project, index) => (
-            <CardProject project={project} key={index} />
-          ))}
+          {projects.map((project, index) => {
+            return (
+              maxVisible > index && (
+                <CardProject project={project} key={index} />
+              )
+            );
+          })}
         </Grid>
+        {maxVisible < projects.length ? (
+          <Text
+            textAlign="center"
+            mt={10}
+            fontWeight={700}
+            cursor="pointer"
+            onClick={() => setMaxVisible(maxVisible + 3)}
+            _hover={{
+              color: "white",
+            }}
+          >
+            Ver mais projetos.
+          </Text>
+        ) : (
+          <Text
+            textAlign="center"
+            mt={10}
+            fontWeight={700}
+            cursor="pointer"
+            onClick={() => setMaxVisible(maxVisible - 3)}
+            _hover={{
+              color: "white",
+            }}
+          >
+            Ver menos.
+          </Text>
+        )}
+
         <Technologies />
         <Text
           mt={10}

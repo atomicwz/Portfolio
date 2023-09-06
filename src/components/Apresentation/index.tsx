@@ -120,6 +120,15 @@ const Apresentation: React.FC = () => {
               }}
             />
           </Link>
+          <Link href="https://github.com/atomicwz" target="_blank">
+            <Image
+              src="/icone_github.svg"
+              w={9}
+              alt="WhatsApp"
+              cursor="pointer"
+              transition=".4s"
+            />
+          </Link>
         </Flex>
       </Flex>
       <Image
