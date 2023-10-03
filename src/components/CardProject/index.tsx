@@ -18,6 +18,7 @@ const CardProject: React.FC<IProps> = ({ project }) => {
       borderColor="#1B70CB"
       rounded="xl"
       h={500}
+      w="100%"
       transition=".4s"
       _hover={{
         transform: "scale(1.03)",
