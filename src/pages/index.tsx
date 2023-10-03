@@ -87,7 +87,7 @@ const Home: React.FC = () => {
           <chakra.span color="#1B70CB">.</chakra.span>
         </Heading>
         <Grid
-          w="70%"
+          w="80%"
           mx="auto"
           mt={{ base: 10, md: 20 }}
           gridTemplateColumns={{
@@ -95,7 +95,7 @@ const Home: React.FC = () => {
             md: "repeat(2, 1fr)",
             lg: "repeat(3, 1fr)",
           }}
-          gap={30}
+          gap={{ base: 10, lg: 30 }}
           justifyContent="center"
           alignItems="center"
         >
@@ -109,6 +109,10 @@ const Home: React.FC = () => {
           next={nextPage}
           hasNextPage={!(projectList.length >= itemPerPage)}
         />
+        <Text textAlign="center" fontSize={12}>
+          Alguns repositórios não estão disponíveis por motivos de
+          confidencialidade.
+        </Text>
         <Technologies />
         <Text
           mt={10}

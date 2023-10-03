@@ -19,6 +19,8 @@ const CardProject: React.FC<IProps> = ({ project }) => {
       rounded="xl"
       h={500}
       w="100%"
+      minW={310}
+      maxW={370}
       transition=".4s"
       _hover={{
         transform: "scale(1.03)",
