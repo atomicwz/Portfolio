@@ -27,6 +27,14 @@ const projects: IProject[] = [
     url: "https://basium-client.vercel.app/",
   },
   {
+    imageUrl: "/projetos/meuloc.png",
+    description:
+      "Desenvolvido com React, Next.js, Typescript e Mobx, este projeto inclui integração de API de pagamentos e API dos Correios. Além disso, conta com recursos de análise de tráfego fornecidos pelo Google Analytics e Facebook Analytics para monitoramento.",
+    title: "LOC",
+    url: "https://meuloc.com/",
+    repositoryUrl: "",
+  },
+  {
     imageUrl: "/projetos/apuamaapp.png",
     description:
       "Criado com React Native, Typescript, Mobx e também consumo de API, o aplicativo permite acompanhar o status de seus produtos de forma eficiente.",
@@ -35,13 +43,6 @@ const projects: IProject[] = [
     playstore:
       "https://play.google.com/store/apps/details?id=com.apuama&hl=pt_BR&gl=US",
     appstore: "https://apps.apple.com/br/app/apuama/id1525253698",
-  },
-  {
-    imageUrl: "/projetos/meuloc.png",
-    description: "E-commerce feito com React, Typescript, Next JS.",
-    title: "LOC",
-    url: "https://meuloc.com/",
-    repositoryUrl: "",
   },
   {
     imageUrl: "/projetos/dashfish.png",
@@ -69,7 +70,8 @@ const projects: IProject[] = [
   },
   {
     imageUrl: "/projetos/lumiar.png",
-    description: "Projeto simples feito o mais básico HTML, CSS e JS.",
+    description:
+      "Um site simples construído com HTML, CSS e JavaScript puro, que possui como única funcionalidade o envio de formulários por e-mail.",
     title: "Lumiar Internet",
     url: "https://lumiarinternet.com/",
     repositoryUrl: "",

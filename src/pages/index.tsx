@@ -8,7 +8,7 @@ import SiteHead from "@/components/SiteHead";
 import Pagination from "@/components/Pagination";
 
 const Home: React.FC = () => {
-  const ref = React.useRef<HTMLImageElement | null>(null);
+  const ref = React.useRef<HTMLHeadingElement | null>(null);
   const [page, setPage] = React.useState(1);
   const itemPerPage = 6;
 
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
     if (page > 1) {
       setPage(page - 1);
       if (ref.current) {
-        ref.current.scrollIntoView({ behavior: "smooth" });
+        ref.current.scroll({ behavior: "smooth" });
       }
     }
   };
@@ -62,13 +62,13 @@ const Home: React.FC = () => {
           alt="Logo"
           mx="auto"
           w={{ base: 350, lg: 400 }}
-          ref={ref}
         />
         <Apresentation />
         <Heading
           fontSize={{ base: 28, md: 60 }}
           textAlign="center"
           mt={{ base: 16, md: 20 }}
+          ref={ref}
         >
           Trabalhos desenvolvidos
           <chakra.span color="#1B70CB">.</chakra.span>
