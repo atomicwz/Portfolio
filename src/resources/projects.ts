@@ -37,7 +37,7 @@ const projects: IProject[] = [
   {
     imageUrl: "/projetos/apuamaapp.png",
     description:
-      "Criado com React Native, Typescript, Mobx e também consumo de API, o aplicativo permite acompanhar o status de seus produtos de forma eficiente.",
+      "Criado com React Native, Typescript, Mobx e também consumo de API, o aplicativo permite acompanhar o status de seus produtos judiciais de forma eficiente.",
     title: "Apuama",
     url: "https://play.google.com/store/apps/details?id=com.connectvet&hl=pt_BR&gl=US",
     playstore:
@@ -67,6 +67,14 @@ const projects: IProject[] = [
     title: "Sisal Gomes",
     url: "https://sisalgomes-wz.vercel.app/",
     repositoryUrl: "https://github.com/atomicwz/sisalgomes",
+  },
+  {
+    imageUrl: "/projetos/necessial.png",
+    description:
+      "PWA E-commerce construído em React e Typescript, consumo de api e com sistema de pagamento integrado.",
+    title: "Necessial - Laíra Marketplace",
+    url: "https://www.necessial.com.br/",
+    repositoryUrl: "",
   },
   {
     imageUrl: "/projetos/lumiar.png",

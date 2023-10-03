@@ -1,4 +1,5 @@
 import React from "react";
+import { animateScroll as scroll } from "react-scroll";
 import { Flex, Heading, Image, chakra, Text, Grid } from "@chakra-ui/react";
 import { projects } from "@/resources/projects";
 import Apresentation from "@/components/Apresentation";
@@ -8,7 +9,7 @@ import SiteHead from "@/components/SiteHead";
 import Pagination from "@/components/Pagination";
 
 const Home: React.FC = () => {
-  const ref = React.useRef<HTMLHeadingElement | null>(null);
+  const listRef = React.createRef<HTMLHeadingElement>();
   const [page, setPage] = React.useState(1);
   const itemPerPage = 6;
 
@@ -19,16 +20,28 @@ const Home: React.FC = () => {
   const nextPage = () => {
     if (projectList.length >= itemPerPage) {
       setPage(page + 1);
-      if (ref.current) {
-        ref.current.scrollIntoView({ behavior: "smooth" });
+      if (listRef.current) {
+        scroll.scrollTo(
+          listRef.current.getBoundingClientRect().top + window.scrollY,
+          {
+            smooth: true,
+            duration: 200,
+          }
+        );
       }
     }
   };
   const prevPage = () => {
     if (page > 1) {
       setPage(page - 1);
-      if (ref.current) {
-        ref.current.scroll({ behavior: "smooth" });
+      if (listRef.current) {
+        scroll.scrollTo(
+          listRef.current.getBoundingClientRect().top + window.scrollY,
+          {
+            smooth: true,
+            duration: 200,
+          }
+        );
       }
     }
   };
@@ -68,7 +81,7 @@ const Home: React.FC = () => {
           fontSize={{ base: 28, md: 60 }}
           textAlign="center"
           mt={{ base: 16, md: 20 }}
-          ref={ref}
+          ref={listRef}
         >
           Trabalhos desenvolvidos
           <chakra.span color="#1B70CB">.</chakra.span>
