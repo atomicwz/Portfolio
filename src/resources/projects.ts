@@ -4,9 +4,38 @@ export interface IProject {
   title: string;
   url: string;
   repositoryUrl?: string;
+  playstore?: string;
+  appstore?: string;
 }
 
 const projects: IProject[] = [
+  {
+    imageUrl: "/projetos/connectvetapp.png",
+    description:
+      "O ConnectVet é um aplicativo móvel desenvolvido em React Native e Typescript, com integração de Mobx, Firebase e consumo de API. Proposto por uma clínica veterinária, ele simplifica a comunicação com os usuários e auxilia no tratamento de animais de estimação, enviando lembretes de horários para administração de medicamentos.",
+    title: "ConnectVet",
+    url: "https://play.google.com/store/apps/details?id=com.connectvet&hl=pt_BR&gl=US",
+    playstore:
+      "https://play.google.com/store/apps/details?id=com.connectvet&hl=pt_BR&gl=US",
+    appstore: "https://apps.apple.com/br/app/connect-vet/id1640300858",
+  },
+  {
+    imageUrl: "/projetos/basium.png",
+    description:
+      "Desenvolvido com React, Next.js, Typescript e Chakra UI, este projeto é um exemplo de simplicidade eficaz. É uma loja virtual atraente que permite aos usuários adicionar itens ao carrinho e concluir as compras, enviando uma mensagem predefinida diretamente para o vendedor por meio do número de contato. Foi implementado exclusivamente com tecnologias front-end para otimizar os custos de desenvolvimento, sem abrir mão da facilidade de adicionar produtos.",
+    title: "Basium",
+    url: "https://basium-client.vercel.app/",
+  },
+  {
+    imageUrl: "/projetos/apuamaapp.png",
+    description:
+      "Criado com React Native, Typescript, Mobx e também consumo de API, o aplicativo permite acompanhar o status de seus produtos de forma eficiente.",
+    title: "Apuama",
+    url: "https://play.google.com/store/apps/details?id=com.connectvet&hl=pt_BR&gl=US",
+    playstore:
+      "https://play.google.com/store/apps/details?id=com.apuama&hl=pt_BR&gl=US",
+    appstore: "https://apps.apple.com/br/app/apuama/id1525253698",
+  },
   {
     imageUrl: "/projetos/meuloc.png",
     description: "E-commerce feito com React, Typescript, Next JS.",
@@ -21,6 +50,14 @@ const projects: IProject[] = [
     title: "Dashfish",
     url: "https://dashfish.vercel.app/login",
     repositoryUrl: "https://github.com/atomicwz/DASHFish",
+  },
+  {
+    imageUrl: "/projetos/loc.franchise.png",
+    description:
+      "Este site é uma landing page criada com as tecnologias React, Chakra UI e Next.js. Ele serve como uma página promocional e possui uma única funcionalidade técnica: um formulário para coleta de e-mail.",
+    title: "LOC - Landing Page",
+    url: "https://franquia.meuloc.com/",
+    repositoryUrl: "",
   },
   {
     imageUrl: "/projetos/sisalgomes.png",

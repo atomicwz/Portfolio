@@ -5,9 +5,33 @@ import Apresentation from "@/components/Apresentation";
 import Technologies from "@/components/Technologies";
 import CardProject from "@/components/CardProject";
 import SiteHead from "@/components/SiteHead";
+import Pagination from "@/components/Pagination";
 
 const Home: React.FC = () => {
-  const [maxVisible, setMaxVisible] = React.useState(3);
+  const ref = React.useRef<HTMLImageElement | null>(null);
+  const [page, setPage] = React.useState(1);
+  const itemPerPage = 6;
+
+  const indexLast = page * itemPerPage;
+  const indexFirst = indexLast - itemPerPage;
+  const projectList = projects.slice(indexFirst, indexLast);
+
+  const nextPage = () => {
+    if (projectList.length >= itemPerPage) {
+      setPage(page + 1);
+      if (ref.current) {
+        ref.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+  const prevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+      if (ref.current) {
+        ref.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
   return (
     <>
       <SiteHead />
@@ -38,6 +62,7 @@ const Home: React.FC = () => {
           alt="Logo"
           mx="auto"
           w={{ base: 350, lg: 400 }}
+          ref={ref}
         />
         <Apresentation />
         <Heading
@@ -61,42 +86,16 @@ const Home: React.FC = () => {
           justifyContent="center"
           alignItems="center"
         >
-          {projects.map((project, index) => {
-            return (
-              maxVisible > index && (
-                <CardProject project={project} key={index} />
-              )
-            );
+          {projectList.map((project, index) => {
+            return <CardProject project={project} key={index} />;
           })}
         </Grid>
-        {maxVisible < projects.length ? (
-          <Text
-            textAlign="center"
-            mt={10}
-            fontWeight={700}
-            cursor="pointer"
-            onClick={() => setMaxVisible(maxVisible + 3)}
-            _hover={{
-              color: "white",
-            }}
-          >
-            Ver mais projetos.
-          </Text>
-        ) : (
-          <Text
-            textAlign="center"
-            mt={10}
-            fontWeight={700}
-            cursor="pointer"
-            onClick={() => setMaxVisible(maxVisible - 3)}
-            _hover={{
-              color: "white",
-            }}
-          >
-            Ver menos.
-          </Text>
-        )}
-
+        <Pagination
+          page={page}
+          prev={prevPage}
+          next={nextPage}
+          hasNextPage={!(projectList.length >= itemPerPage)}
+        />
         <Technologies />
         <Text
           mt={10}

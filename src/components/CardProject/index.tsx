@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Image, Text, Button, Box } from "@chakra-ui/react";
 import { IProject } from "@/resources/projects";
+import { FaGooglePlay, FaApple } from "react-icons/fa";
 import Link from "next/link";
 
 interface IProps {
@@ -16,7 +17,7 @@ const CardProject: React.FC<IProps> = ({ project }) => {
       borderBottom="10px solid"
       borderColor="#1B70CB"
       rounded="xl"
-      h={470}
+      h={500}
       transition=".4s"
       _hover={{
         transform: "scale(1.03)",
@@ -26,6 +27,7 @@ const CardProject: React.FC<IProps> = ({ project }) => {
         src={project.imageUrl}
         alt={project.title}
         w="100%"
+        maxH={200}
         objectFit="cover"
       />
       <Flex
@@ -43,29 +45,58 @@ const CardProject: React.FC<IProps> = ({ project }) => {
           </Text>
         </Box>
         <Flex gap={4} mt={5}>
-          <Link href={project.repositoryUrl || ""} target="_blank">
-            <Button
-              borderColor="#1B70CB"
-              color="white"
-              variant="outline"
-              _hover={{ color: "black", bg: "#fff" }}
-              isDisabled={!project.repositoryUrl}
-            >
-              Ver Repositório
-            </Button>
-          </Link>
-          <Link href={project.url} target="_blank">
-            <Button
-              bg="#1B70CB"
-              _hover={{
-                bg: "white",
-                color: "black",
-              }}
-              color="black"
-            >
-              Visitar Site
-            </Button>
-          </Link>
+          {project.appstore && project.playstore ? (
+            <>
+              <Box
+                cursor="pointer"
+                bg="#1B70CB"
+                p={3}
+                _hover={{ bg: "#429dff" }}
+                transition=".4s"
+              >
+                <Link href={project.playstore}>
+                  <FaGooglePlay size={25} />
+                </Link>
+              </Box>
+              <Box
+                cursor="pointer"
+                bg="#1B70CB"
+                p={3}
+                _hover={{ bg: "#429dff" }}
+                transition=".4s"
+              >
+                <Link href={project.appstore}>
+                  <FaApple size={25} />
+                </Link>
+              </Box>
+            </>
+          ) : (
+            <>
+              <Link href={project.url} target="_blank">
+                <Button
+                  bg="#1B70CB"
+                  _hover={{
+                    bg: "white",
+                    color: "black",
+                  }}
+                  color="black"
+                >
+                  Visitar Site
+                </Button>
+              </Link>
+              <Link href={project.repositoryUrl || ""} target="_blank">
+                <Button
+                  borderColor="#1B70CB"
+                  color="white"
+                  variant="outline"
+                  _hover={{ color: "black", bg: "#fff" }}
+                  isDisabled={!project.repositoryUrl}
+                >
+                  Ver Repositório
+                </Button>
+              </Link>
+            </>
+          )}
         </Flex>
       </Flex>
     </Flex>
