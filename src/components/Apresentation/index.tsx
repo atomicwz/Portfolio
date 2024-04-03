@@ -61,6 +61,7 @@ const Apresentation: React.FC = () => {
               rounded="3xl"
               display="flex"
               gap={2}
+              style={{ textDecoration: "none" }}
             >
               <Image src="/download.svg" w={5} alt="Download" />
               Baixar CV
