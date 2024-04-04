@@ -53,7 +53,11 @@ const Apresentation: React.FC = () => {
           +1.5 anos trabalhando com React e Typescript.
         </Heading>
         <Flex alignItems="center" gap={3} mt={10}>
-          <Link href="/dener.cv.pdf" download>
+          <Link
+            href="/dener.cv.pdf"
+            download
+            style={{ textDecoration: "none" }}
+          >
             <Button
               fontWeight="bold"
               color="black"
@@ -61,7 +65,6 @@ const Apresentation: React.FC = () => {
               rounded="3xl"
               display="flex"
               gap={2}
-              style={{ textDecoration: "none" }}
             >
               <Image src="/download.svg" w={5} alt="Download" />
               Baixar CV
