@@ -50,7 +50,7 @@ const Apresentation: React.FC = () => {
           enfrentar desafios com entusiasmo.
         </Text>
         <Heading fontWeight={500} maxW={500} fontSize={{ base: 25, lg: 40 }}>
-          +1.5 anos trabalhando com React e Typescript.
+          +2.5 anos trabalhando com React e Typescript.
         </Heading>
         <Flex alignItems="center" gap={3} mt={10}>
           <Link
