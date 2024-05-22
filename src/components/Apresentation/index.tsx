@@ -54,8 +54,7 @@ const Apresentation: React.FC = () => {
         </Heading>
         <Flex alignItems="center" gap={3} mt={10}>
           <Link
-            href="/dener.cv.pdf"
-            download
+            href="https://drive.google.com/file/d/1kkGJ1_DLnKmziCPIsYGGUPVxXjo8dbnh/view?usp=sharing"
             style={{ textDecoration: "none" }}
           >
             <Button
