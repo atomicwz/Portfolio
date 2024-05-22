@@ -65,7 +65,7 @@ const projects: IProject[] = [
     description:
       "Projeto construído em React e Typescript, também utilizado o framework Chakra UI para auxiliar no desenvolvimento da interface.",
     title: "Sisal Gomes",
-    url: "https://sisalgomes-wz.vercel.app/",
+    url: "https://sisalgomes.vercel.app/",
     repositoryUrl: "https://github.com/atomicwz/sisalgomes",
   },
   {
